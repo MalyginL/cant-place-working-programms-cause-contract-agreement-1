@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+          href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" th:href="@{/css/cover.css}"
+          href="../../css/cover.css" />
+</head>
+<body>
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand" th:inline="text">[[${#httpServletRequest.remoteUser}]]</h3>
+                    <nav class="nav nav-masthead">
+
+                        <a class="nav-link" th:href="@{/logout}" method="post">Logout</a>
+
+                    </nav>
+                </div>
+            </div>
+
+            <div class="inner cover">
+                <h1 class="cover-heading">New Settings</h1>
+                <form action="#" th:action="@{/admin/change}" th:object="${webRepository}" method="post">
+                <table class="table table-sm">
+                    <tbody>
+                    <tr>
+                        <th scope="row">Database connect address</th>
+                        <td><input type="text"  class="form-control" th:field="*{dataBaseAddress}"/></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Database table name</th>
+                        <td><input type="text"  class="form-control" th:field="*{DbName}" /></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Database connect username</th>
+                        <td> <input type="text"  class="form-control" th:field="*{dataBaseUserName}" /></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Database connect password</th>
+                        <td><input type="text"  class="form-control" th:field="*{dataBasePassword}" /></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Parsing date</th>
+                        <td><input type="number"  class="form-control" th:field="*{parsingDate}" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Comparator files path</th>
+                        <td><input type="text"  class="form-control" th:field="*{DataPath}" /></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Channels number (default = 8)</th>
+                        <td> <input type="text"  class="form-control" th:field="*{Channels}" /></td>
+
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p class="lead"> <button class="btn btn-lg btn-secondary" type="submit">Save</button> </p>
+
+                </form>
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>Admin page RIRT.ru</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

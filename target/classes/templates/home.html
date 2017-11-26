@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+          href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/cover.css}"
+          href="../../css/cover.css"/>
+</head>
+<body>
+
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">Home Page</h3>
+                    <nav class="nav nav-masthead">
+                    <div th:if="${#httpServletRequest.remoteUser}">
+                        <a class="nav-link active" th:href="@{/logout}" method="post">Logout</a>
+                    </div>
+                        <div th:unless="${#httpServletRequest.remoteUser}">
+                        <a class="nav-link active" th:href="@{/admin}" method="post">login</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="inner cover">
+                <h1 class="cover-heading">App is working</h1>
+                <p class="lead">This program is intended for parsing the data files of the comparator for the subsequent
+                    fragmentation into the database</p>
+                <p class="lead">
+                    <a th:href="@{/admin}" class="btn btn-lg btn-secondary">Configure</a>
+                </p>
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>Leonid Malygin lenyamalygin@gmail.com</p>
+                    <p>RIRT.ru</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!--<div th:replace="fragments/footer :: footer"/>-->
+
+</body>
+</html>

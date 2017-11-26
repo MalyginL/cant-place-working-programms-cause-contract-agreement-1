@@ -1,0 +1,10 @@
+project\controller\MainController.class
+project\comparator\DataFile.class
+project\security\Access_DeniedHandler.class
+project\comparator\HistoryLoader.class
+project\comparator\RealTimeLoader.class
+project\security\SecurityConfig.class
+project\SpringBootMain.class
+project\entity\WebRepository.class
+project\entity\ThreadControl.class
+project\comparator\Dao.class

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+          href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" th:href="@{/css/cover.css}"
+          href="../../css/cover.css" />
+</head>
+<body>
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand" th:inline="text">[[${#httpServletRequest.remoteUser}]]</h3>
+                    <nav class="nav nav-masthead">
+
+                        <a class="nav-link" th:href="@{/logout}" method="post">Logout</a>
+
+                    </nav>
+                </div>
+            </div>
+
+            <div class="inner cover">
+                <h1 class="cover-heading">Current Settings</h1>
+                <table class="table table-sm">
+                    <tbody>
+                    <tr>
+                        <th scope="row">Database connect address</th>
+                        <td th:text="${adr}"></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">DataBase table name</th>
+                        <td th:text="${nam}"></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Database connect username</th>
+                        <td th:text="${log}"></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Database connect password</th>
+                        <td th:text="${pswd}"></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Parsing date timestamp</th>
+                        <td th:text="${pd}"></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Parsing date common</th>
+                        <td th:text="${pdc}"></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Comparator files path</th>
+                        <td th:text="${path}"></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Channels number (default = 8)</th>
+                        <td th:text="${num}"></td>
+
+                    </tr>
+                    </tbody>
+                </table>
+
+                <p class="lead"><a th:href="@{/admin/change}"  class="btn btn-lg btn-secondary">Change</a> </p>
+
+                <p class="lead">To start parsing comparator datafiles to DataBase press</p>
+                <p class="lead"><a href="/start" class="btn btn-lg btn-secondary"  >Start</a></p>
+
+
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <p>Admin page RIRT.ru</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
