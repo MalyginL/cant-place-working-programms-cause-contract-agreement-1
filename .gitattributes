@@ -1,5 +1,8 @@
 # Auto detect text files and perform LF normalization
-*.rb linguist-language=Java
+* linguist-vendored
+*.jsp linguist-vendored=false
+*.css linguist-vendored=false
+*.js linguist-vendored=false
 * text=auto
 
 # Custom for Visual Studio
